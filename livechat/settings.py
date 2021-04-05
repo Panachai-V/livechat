@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'chatwebsite',
+    'redis-chatapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

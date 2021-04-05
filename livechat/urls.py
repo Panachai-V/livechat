@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from chatwebsite import views as chatwebviews
+from redis-chatapp import views as redischatviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', chatwebviews.index, name='index'),
+    path('', redischatviews.index, name='index'),
 ]
