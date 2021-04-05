@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from redischatapp import views as redischatviews
+from mariachatapp import views as mariachatviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', redischatviews.index, name='index'),
+    path('redis/', redischatviews.index, name='index'),
+    path('maria/', mariachatviews.index, name='index'),
 ]
