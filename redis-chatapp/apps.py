@@ -1,5 +1,4 @@
 from django.apps import AppConfig
 
-
 class ChatwebsiteConfig(AppConfig):
-    name = 'chatwebsite'
+    name = 'redis-chatapp'
