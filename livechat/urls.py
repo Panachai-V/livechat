@@ -22,4 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('redis/', redischatviews.index, name='index'),
     path('maria/', mariachatviews.index, name='index'),
+    path('redis/home/', redischatviews.home, name='home'),
+    path('maria/home/', mariachatviews.home, name='home'),
+
 ]
