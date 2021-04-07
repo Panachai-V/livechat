@@ -20,9 +20,12 @@ from mariachatapp import views as mariachatviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('redis/', redischatviews.index, name='index'),
-    path('maria/', mariachatviews.index, name='index'),
-    path('redis/home/', redischatviews.home, name='home'),
-    path('maria/home/', mariachatviews.home, name='home'),
+    path('redis/', redischatviews.index, name='indexredis'),
+    path('maria/', mariachatviews.index, name='indexmaria'),
+    #path('maria/home/', mariachatviews.home, name='home'),
+    path('', redischatviews.index, name='index'),
+    path('user/login/', redischatviews.userlogin, name='userlogin'),
+    path('user/logout/', redischatviews.userlogout, name='userlogout'),
+    path('user/register/', redischatviews.register, name='userregister'),
 
 ]
