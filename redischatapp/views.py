@@ -1,12 +1,13 @@
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, resolve_url
 from django.template import RequestContext
 from redischatapp.models import Profile
-def index(request):
-    return render(request,'login.html')
 
-def userlogin(request):
+def home(request):
+    return render(request,'home.html')
+
+def redislogin(request):
     username = request.POST.get("username")
     password = request.POST.get("password")
 
@@ -17,14 +18,18 @@ def userlogin(request):
         return redirect('index')
     else:
         #show error
-        return render(request,'login.html',{'error':'Your username or password are incorrect'})
-def userlogout(request):
-    context = RequestContext(request)
+        return render(request,'login.html',
+        {'error':'Your username or password are incorrect',
+        'urlregister':resolve_url('redisregister'),
+        'urllogin':resolve_url('redislogin')})
+
+def redislogout(request):
+    # context = RequestContext(request)
     logout(request)
     # Redirect back to index page.
     return redirect('index')
 
-def register(request):
+def redisregister(request):
     if request.method == 'POST':
         username = request.POST.get("username", "")
         password = request.POST.get("password", "")

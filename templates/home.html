@@ -2,33 +2,36 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css'%}" />
+   <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css'%}" />
    <link rel="stylesheet" href="{% static 'chat.css' %}">
 </head>
+
 <body>
-   <!-- {% if user.is_authenticated %}
-    <p> Hi {{ user.username }} <a href="{{urllogout}}" class="btn btn-primary" role="button" data-bs-toggle="button">Log out</a> </p>
-    {% else %}
-    <meta http-equiv="REFRESH" content="0;url={{ urllogin }}">
-    {% endif %} -->
-	<div class="main-section">
-		<div class="head-section">
-			<div class="headLeft-section">
-				<div class="headLeft-sub">
-					<input type="text" name="search" placeholder="Search...">
-					<button> <i class="fa fa-search"></i> </button>
-				</div>
-			</div>
-			<div class="headRight-section">
-				<div class="headRight-sub">
-					<h3>Active Username</h3>
-					<small>Latest message....</small>
-				</div>
-			</div>
-		</div>
-		<div class="body-section">
-			<div class="left-section" scrolling="yes" data-mcs-theme="minimal-dark">
+   <div class="main-section">
+      {% if user.is_authenticated %}
+      <p> Hi {{ user.username }} </p>
+      <button type=“button”><a href="{{urllogout}}">Log out</a></button>
+      {% else %}
+      <meta http-equiv="REFRESH" content="0;url={{ urllogin }}">
+      {% endif %}
+      <div class="head-section">
+         <div class="headLeft-section">
+            <div class="headLeft-sub">
+               <input type="text" name="search" placeholder="Search...">
+               <button> <i class="fa fa-search"></i> </button>
+            </div>
+         </div>
+         <div class="headRight-section">
+            <div class="headRight-sub">
+               <h3>Active Username</h3>
+               <small>Latest message....</small>
+            </div>
+         </div>
+      </div>
+      <div class="body-section">
+         <div class="left-section" scrolling="yes" data-mcs-theme="minimal-dark">
             <ul>
                <li>
                   <div class="chatList">
@@ -56,9 +59,9 @@
                   </div>
                </li>
             </ul>
-			</div>
-			<div class="right-section">
-				<div class="message" scrolling="yes" data-mcs-theme="minimal-dark">
+         </div>
+         <div class="right-section">
+            <div class="message" scrolling="yes" data-mcs-theme="minimal-dark">
                <ul>
                   <li class="msg-left">
                      <div class="msg-left-sub">
@@ -122,20 +125,21 @@
                      </div>
                   </li>
                </ul>
-				</div>
-				<div class="right-section-bottom">
-					<form>
-						<div class="upload-btn">
-						  	<button class="btn"><i class="fa fa-image"></i></button>
-						  	<input type="file" name="myfile" />
-						</div>
-						<input type="text" name="" placeholder="type here...">
-						<button class="btn-send"><i class="fa fa-paper-plane"></i></button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script></script>
+            </div>
+            <div class="right-section-bottom">
+               <form>
+                  <div class="upload-btn">
+                     <button class="btn"><i class="fa fa-image"></i></button>
+                     <input type="file" name="myfile" />
+                  </div>
+                  <input type="text" name="" placeholder="type here...">
+                  <button class="btn-send"><i class="fa fa-paper-plane"></i></button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script></script>
 </body>
+
 </html>
