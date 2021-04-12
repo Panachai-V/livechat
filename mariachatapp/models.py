@@ -1,7 +1,5 @@
 from django.db import models
-
 # Create your models here.
-from django.db import models
 
 class User(models.Model):
     name = models.CharField(max_length=100)
@@ -14,7 +12,7 @@ class User(models.Model):
 
 class Group(models.Model):
     groupname = models.CharField(max_length=30)
-    groupID = models.IntegerField(max_length=10)
+    groupID = models.IntegerField
     username = models.ManyToManyField(User) #ForiengKey IS_IN relation
 
     def __str__(self):
@@ -22,7 +20,7 @@ class Group(models.Model):
 
 class MessageLog(models.Model):
     msgtext = models.CharField(max_length=1000)
-    msgID = models.IntegerField(max_length=10)
+    msgID = models.IntegerField
     timestamp = models.DateTimeField(auto_now_add=True)
 
     chatID = models.ManyToManyField(User) #ForiengKey PRIVATE_CHAT
